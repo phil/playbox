@@ -1,0 +1,30 @@
+<table id="playlist">
+	<thead>
+		<tr>
+			<th>ETA</th>
+			<th>Title</th>
+			<th>Artist</th>
+			<th>Album</th>
+			<th>Genre</th>
+			<th>Length</th>
+			<th>Added</th>
+			<th>Played</th>
+			<th><!-- Info --></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% plays.each do |play| %>
+		<tr>
+			<td>ETA</td>
+			<td><%= play.track.title %></td>
+			<td><%= play.track.artist %></td>
+			<td><%= play.track.album %></td>
+			<td><%= play.track.genre %></td>
+			<td><%= play.track.length %></td>
+			<td><%= play.created_at %></td>
+			<td><%= play.played_at %></td>
+			<td><a href="/track/<%= play.track.id %>" data-trackid="<%= play.track.id %>" class="track_button">Info</a></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

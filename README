@@ -1,0 +1,14 @@
+Database Setup:
+
+in IRB run `DataMapper.auto_migrate!` if this is a first run (THS WILL DROP TALBES THEN CREATE THEM)
+otherwise (NON DESTRUCTIVE): run `DataMapper.auto_upgrade!` 
+
+
+
+
+IRB:
+require '/Users/phil/Sites/playbox/config/environment'
+
+
+Connections:
+

@@ -1,0 +1,72 @@
+Commands UP:
+
+{action => "authenticate", :login => "", :password => ""}
+{action => "user_info"}
+
+play	
+pause	
+
+playlist_add
+playlist_remove
+
+vote	
+
+next	
+previous	
+
+volume
+
+
+
+
+Commands DOWN
+
+state => "playing" | "paused" | "stopped"
+current_play => {:length, :track{} }
+
+=============================================================================
+=============================================================================
+=============================================================================
+=============================================================================
+
+
+
+
+
+
+Commands UP issue "action" commands i.e., 
+{:action => "play"}
+{:action => "add", :track_id => 3322}
+
+
+
+
+Commands DOWN issue 'notifications' OR 'response':
+Every message will contain basic player state, as well as a notification or response (probably not both)
+{
+	:state => "playing", 
+	:current_play => {},
+	
+	:notification => {
+		:action => "play",
+		:track_id => 4567
+	},
+	
+	:response => {
+		:action => "search",
+		:tracks => [],
+		:track => <>
+	}
+}
+
+
+
+
+
+A "notification" is a message sent to everyone
+A "response" is a message sent to only this connection
+
+
+Cmdline tools
+
+Scanning Cmd Line: `time find . -type f -ctime 0`

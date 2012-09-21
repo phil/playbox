@@ -1,0 +1,17 @@
+<h1>Jukebox</h1>
+
+<%= partial "controls" %>
+
+<%= partial "nav" %>
+
+
+<h2>Playlist</h2>
+
+<%= partial :playlist, :locals => {:plays => @plays} unless @plays.nil? %>
+
+
+<hr />
+
+<% @tracks.each do |track| %>
+	<p><%= track.path %> <a href="/play_track/<%= track.id %>">play now</a> -- <a href="/playlist/add/<%= track.id %>" class="add_track_button" data-trackid="<%= track.id %>">add</a><a href="/track/<%= track.id %>" class="track_button" data-trackid="<%= track.id %>">(i)</a></p>
+<% end unless @tracks.nil? %>

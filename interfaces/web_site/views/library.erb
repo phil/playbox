@@ -1,0 +1,19 @@
+<h2>Library</h2>
+
+<table>
+	<thead>
+		<tr>
+			<th>Track</th>
+			<th><!-- --></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @tracks.each do |track| %>
+			<tr>
+				<td><%= track.path %></td>
+				<td><%#= link_to "Play Now", "/play_track/#{track.id}" %></td>
+				<td><a href="/play_track/<%= track.id %>">ADD</a></td>
+			</tr>
+		<% end %>
+	</tr>
+</table>
