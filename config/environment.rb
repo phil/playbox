@@ -15,6 +15,5 @@ end
 
 
 # DataMapper.setup(:default, 'sqlite:///path/to/project.db')
-#DataMapper.setup(:default, 'postgres://dev:letmein99@localhost/jukebox_development')
 DataMapper.setup(:default, 'mysql://localhost/jukebox_development')
 DataMapper.finalize
